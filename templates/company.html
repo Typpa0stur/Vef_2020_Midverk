@@ -1,0 +1,44 @@
+{% extends "extendo.html" %}
+
+ {% block hausi %}
+<meta charset="utf-8" /> {% endblock %}
+
+{% block titill %}
+Bensinstodvar
+{% endblock %}
+
+{% block innihald %}
+
+{% block navigator %}
+<h1>Soluadilar eldsneytis a Islandi</h1>
+
+<nav>
+    <a href="/">Forsida</a>
+    <a href="http://apis.is/">Json Apis</a>
+    <a href="https://vefthroun.github.io/bjargir.html">Bjargir</a>
+</nav>
+
+{% endblock %}
+
+<table>
+    <caption>Allar Bensinstodvar fyrirtaekisins</caption>
+    <tbody>
+        <tr>
+            <th><h3>Fyrirtaeki</h3></th>
+            <th><h3>Stadur</h3></th>
+            {% for i in data["results"] %}
+            {% if co == i["company"] %}
+        <tr>
+            <td><a href="/moreInfo/{{i["key"]}}">{{i["company"]}}</a></td>
+            <td>{{i["name"]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        </tr>
+    </tbody>
+
+</table>
+
+
+
+{% endblock %}

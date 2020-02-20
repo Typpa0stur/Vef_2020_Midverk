@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/static/styru4.css" type="text/css" />
+    <title>Risaeðlu hræ</title>
+</head>
+<body>
+    <h1>Söluaðilar eldsneytis á Íslandi</h1>
+
+    <nav>
+        <a href="/">Forsíða</a>
+        <a href="http://apis.is/">Json Apis</a>
+        <a href="https://vefthroun.github.io/bjargir.html">Bjargir</a>
+    </nav>
+
+    <main>
+        <div class="wrapper">
+            {% for i in co %}
+            <div class="box">
+                <a href="/company/{{i}}">
+                    <img src="./static/{{ i }}.png" />
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="kort">
+            <h2>Besta verðið</h2>
+            <h4>Ódýrasta bensínið: <i>197.9 kr.</i> er hjá Costco Iceland, Kauptún</h4>
+            <h4>Ódýrasta díesel olían: <i>195.9 kr.</i> er hjá Costco Iceland, Kauptún</h4> 
+            <p>Síðast uppfært: 19. 02. 2020 Kl. 15:15</p>
+        </div>
+    </main>
+</body>
+</html>
